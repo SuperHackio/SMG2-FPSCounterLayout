@@ -41,3 +41,6 @@ You also need the **CodeWarror Compiler (4.3.0.182)** and **[Kamek](https://gith
 Syati will come with some pre-made source files, you may delete those if you want (but do not delete init.cpp).
 
 On the [Releases](https://github.com/SuperHackio/SMG2-FPSCounterLayout/releases) page, you can find a pre-compile file. This is for hacks that don't use any other Syati code (like Project Template).
+
+## Special Thanks
+Special thanks to [Galaxy Master](https://github.com/MasterofGalaxies) for helping me figure out the math needed to calculate the FPS.
