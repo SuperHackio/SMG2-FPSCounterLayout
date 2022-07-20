@@ -7,24 +7,24 @@ https://user-images.githubusercontent.com/44330283/180044183-d2acde4a-68ba-4d6d-
 ***Note: Dolphin doesn't emulate game lag, so this layout is useless on emulator.***
 
 ## Supported Regions
-| Region |  | Notes |
-| :---: | :---: | -------- |
-| USA | :heavy_check_mark: | NTSC60 |
-| PAL | :heavy_check_mark: | Supports PAL50, PAL-M50, and PAL60 (aka. EURGB60).<br/>If using PAL50 or PAL-M50, the max framerate is 50.00 FPS. |
-| JAP | :heavy_check_mark: | NTSC60 |
-| KOR | :heavy_check_mark: | NTSC60 |
-| TAW | :heavy_check_mark: | NTSC60 |
+The following regions and video modes are supported:
+| Region | TV Type / TV Resolution |
+| :---: | -------- |
+| USA | `Standard TV (480i)` <br/>`EDTV or HDTV (480p)` |
+| PAL | `50Hz (576i)`<br/>`60Hz (480i)`<br/>`EDTV or HDTV (480p)` |
+| JAP | `プログレッシブ`<br/>`インターレース` |
+| KOR | `프로그레시브`<br/>`인터레이스` |
+| TAW | `プログレッシブ`<br/>`インターレース` |
 
-*Note: The debug video mode `DEBUG_PAL` is not supported.*
 
 ## How it works
-Every frame will have it's FPS calculated and displayed to your screen in the layout on the top of the screen.<br/>The background of the layout will change as the number of frames changes.<br/>Below is a table of what the colours mean:
+Every frame will have it's FPS calculated and displayed to your screen in the layout on the top of the screen.<br/>The background colour of the layout will change as the number of frames changes.<br/>Below is a table of what the colours mean:
 | Colour Range | Frame Range<br/>(60 FPS) | Frame Range<br/>(50 FPS) | Description |
 | :---: | :-----: | :---: | ---- |
-| 🔵 -> 🟢 | 60 - 55 | 50 - 45 | This is perfect to good FPS. You can get away with a little bit of green in your mod release. |
-| 🟢 -> 🟡 | 55 - 50 | 44 - 40 | This is good to okay FPS. You shouldn't have this in your mod. If you do, it should be as minimal as possible. |
-| 🟡 -> 🔴 | 50 - 40 | 40 - 35 | This is okay to bad FPS. You shouldn't have this in your mod at all. |
-| 🔴 -> ⚫ | 40 - 00 | 35 - 00 | This is bad to forbidden FPS. Unplayable. Don't release a mod that has this. |
+| 🔵 -> 🟢 | 60 - 55 | 50 - 45 | This is the perfect range. If you mod ticks inbetween here, you should be good to go. |
+| 🟢 -> 🟡 | 55 - 50 | 45 - 40 | This is a good range. Even vanilla SMG2 drops this low at times. Your mod can drop to this range at times, but preferably as rare as possible. |
+| 🟡 -> 🔴 | 50 - 40 | 40 - 35 | This range is rather bad. While SMG2 does appear to drop to 40 FPS at exceptional occurences, you really don't want this to happen in your mod. |
+| 🔴 -> ⚫ | 40 - 00 | 35 - 00 | Reaching this range is an achievement in its own regard. |
 
 ## Supported Extensions
 - [Galaxy Level Engine](https://github.com/SuperHackio/GalaxyLevelEngine) :heavy_check_mark:
@@ -43,4 +43,4 @@ Syati will come with some pre-made source files, you may delete those if you wan
 On the [Releases](https://github.com/SuperHackio/SMG2-FPSCounterLayout/releases) page, you can find a pre-compile file. This is for hacks that don't use any other Syati code (like Project Template).
 
 ## Special Thanks
-Special thanks to [Galaxy Master](https://github.com/MasterofGalaxies) for helping me figure out the math needed to calculate the FPS.
+to [Galaxy Master](https://github.com/MasterofGalaxies) for helping me figure out the math needed to calculate the FPS.
