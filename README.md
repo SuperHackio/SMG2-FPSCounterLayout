@@ -26,6 +26,8 @@ Every frame will have it's FPS calculated and displayed to your screen in the la
 | 🟡 -> 🔴 | 50 - 40 | 40 - 35 | This range is rather bad. While SMG2 does appear to drop to 40 FPS at exceptional occurences, you really don't want this to happen in your mod. |
 | 🔴 -> ⚫ | 40 - 00 | 35 - 00 | Reaching this range is an achievement in its own regard. |
 
+*Note: To avoid flickering, there is a deadzone between 60.00 and 59.00 (50.00 and 49.00 in 50Hz). While 59.00 can still show up, anything above 59.00 will be rounded to 60.00.*
+
 ## Supported Extensions
 - [Galaxy Level Engine](https://github.com/SuperHackio/GalaxyLevelEngine) :heavy_check_mark:
 - [SMG2-Project-Template](https://github.com/SunakazeKun/SMG2-Project-Template) :heavy_check_mark:
