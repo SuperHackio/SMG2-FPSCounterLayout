@@ -34,7 +34,7 @@ Every frame will have it's FPS calculated and displayed to your screen in the la
 (You will need to compile Project Template yourself to include the FPS counter)
 
 ## Build Instructions
-This mod requires **[Syati](https://github.com/SunakazeKun/Syati)**.
+This mod requires **[Syati](https://github.com/SMGCommunity/Syati)**.
 
 Clone Syati, then clone this repository. Once cloned, merge the contents of this repository into Syati's folder.</br>
 If prompted to replace files, click "Yes".</br>
@@ -43,6 +43,3 @@ You also need the **CodeWarror Compiler (4.3.0.182)** and **[Kamek](https://gith
 Syati will come with some pre-made source files, you may delete those if you want (but do not delete init.cpp).
 
 On the [Releases](https://github.com/SuperHackio/SMG2-FPSCounterLayout/releases) page, you can find a pre-compile file. This is for hacks that don't use any other Syati code (like Project Template).
-
-## Special Thanks
-to [Galaxy Master](https://github.com/MasterofGalaxies) for helping me figure out the math needed to calculate the FPS.
