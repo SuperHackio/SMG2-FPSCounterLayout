@@ -34,9 +34,9 @@ Every frame will have it's FPS calculated and displayed to your screen in the la
 FPS Calculation modes:
 | Name | Icon | Description |
 | --- | :-----: | ---- |
-| Standard | 60<br/>59.x | To avoid flickering, there is a deadzone between 60.00 and 59.00 (50.00 and 49.00 in 50Hz). While 59.00 can still show up, anything above 59.00 will be rounded to 60.00. |
-| Precise | XX<br/>.YY | Full precision is used on the display, meaning all possible values will be shown. |
-| Rounded | XX<br/>❌ | Shows whole numbers only. |
+| Standard | ![60fps mode](https://raw.githubusercontent.com/SuperHackio/SMG2-FPSCounterLayout/main/Mode0.png)<br/>![50fps mode](https://raw.githubusercontent.com/SuperHackio/SMG2-FPSCounterLayout/main/Mode3.png) | To avoid flickering, there is a deadzone between 60.00 and 59.00 (50.00 and 49.00 in 50Hz). While 59.00 can still show up, anything above 59.00 will be rounded to 60.00. |
+| Precise | ![Precise mode](https://raw.githubusercontent.com/SuperHackio/SMG2-FPSCounterLayout/main/Mode1.png) | Full precision is used on the display, meaning all possible values will be shown. |
+| Rounded | ![Rounded mode](https://raw.githubusercontent.com/SuperHackio/SMG2-FPSCounterLayout/main/Mode2.png) | Shows whole numbers only. |
 
 ## Supported Extensions
 - [Galaxy Level Engine](https://github.com/SuperHackio/GalaxyLevelEngine) :heavy_check_mark:
