@@ -2,11 +2,12 @@
 This SMG2 mod will add a FPS Display to your game. Very useful for mod developers to make sure that the levels run at a smooth 60fps.
 
 
-https://github.com/SuperHackio/SMG2-FPSCounterLayout/blob/main/FPS_Demo.mp4
+https://github.com/SuperHackio/SMG2-FPSCounterLayout/assets/44330283/b22fa8ff-d5bd-4663-b206-e7e72a36df18
 
 ***Note: Dolphin doesn't emulate game lag, so this layout is useless on emulator.***
 
 ## Supported Regions
+
 The following regions and video modes are supported:
 | Region | TV Type / TV Resolution |
 | :---: | -------- |
