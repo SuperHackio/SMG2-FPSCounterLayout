@@ -2,7 +2,7 @@
 This SMG2 mod will add a FPS Display to your game. Very useful for mod developers to make sure that the levels run at a smooth 60fps.
 
 
-https://user-images.githubusercontent.com/44330283/180044183-d2acde4a-68ba-4d6d-9e8f-df58f9278143.mp4
+https://github.com/SuperHackio/SMG2-FPSCounterLayout/raw/main/FPS_Demo.mp4
 
 ***Note: Dolphin doesn't emulate game lag, so this layout is useless on emulator.***
 
@@ -26,7 +26,16 @@ Every frame will have it's FPS calculated and displayed to your screen in the la
 | 🟡 -> 🔴 | 50 - 40 | 40 - 35 | This range is rather bad. While SMG2 does appear to drop to 40 FPS at exceptional occurences, you really don't want this to happen in your mod. |
 | 🔴 -> ⚫ | 40 - 00 | 35 - 00 | Reaching this range is an achievement in its own regard. |
 
-*Note: To avoid flickering, there is a deadzone between 60.00 and 59.00 (50.00 and 49.00 in 50Hz). While 59.00 can still show up, anything above 59.00 will be rounded to 60.00.*
+### New to Version 2
+- You can press (1) on the Wii Remote to show/hide the layout
+- You can press (2) on the Wii Remote to change FPS Calculation modes (listed below)
+
+FPS Calculation modes:
+| Name | Icon | Description |
+| --- | :-----: | ---- |
+| Standard | 60<br/>59.x | To avoid flickering, there is a deadzone between 60.00 and 59.00 (50.00 and 49.00 in 50Hz). While 59.00 can still show up, anything above 59.00 will be rounded to 60.00. |
+| Precise | XX<br/>.YY | Full precision is used on the display, meaning all possible values will be shown. |
+| Rounded | XX<br/>❌ | Shows whole numbers only. |
 
 ## Supported Extensions
 - [Galaxy Level Engine](https://github.com/SuperHackio/GalaxyLevelEngine) :heavy_check_mark:
