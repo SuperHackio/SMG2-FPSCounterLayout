@@ -1,0 +1,17 @@
+{
+  "Name": "SMG2 FPS Layout",
+  "Author": "Super Hackio",
+  "Description": "An FPS counter for Super Mario Galaxy",
+
+  "ModuleData": [
+    {
+      "OnGameSystemFrameLoop": [
+        {
+          "Name": "FPSCounter_CalcFPS",
+          "Function": "MR::CalcFPS",
+          "Include": "FPS_Include.h"
+        }
+      ]
+    }
+  ]
+}

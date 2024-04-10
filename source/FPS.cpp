@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Hackio/FPS.h"
+#include "FPS.h"
 
 const char* LayoutName = "FPSCounter";
 const char* Pane_PicMode = "PicMode";
@@ -153,10 +153,14 @@ namespace MR
 
     FPSCounter* getFPSCounterLayout()
     {
-        CounterLayoutController* holder = getCounterLayoutController();
+        register CounterLayoutController* holder = getCounterLayoutController();
         if (holder == NULL)
             return NULL;
-        return (FPSCounter*)holder->_4C;
+        register FPSCounter* MyLayout;
+        __asm {
+            lwz MyLayout, 0x4C(holder)
+        }
+        return MyLayout;
     }
     CounterLayoutController* getCounterLayoutController()
     {
@@ -188,18 +192,25 @@ namespace MR
 //Edit CounterLayoutController
 kmWrite32(0x80471780, 0x38600050); //li r3, 0x4C -> li r3, 0x50
 
-void CreateFPSCounter(CounterLayoutController* pLayout)
+void CreateFPSCounter(register CounterLayoutController* pLayout)
 {
     MR::connectToSceneLayout(pLayout);
 
     if (!MR::isFileExist("/LayoutData/FPSCounter.arc", true))
     {
-        pLayout->_4C = NULL;
+        register LayoutActor* f = NULL;
+        __asm
+        {
+            stw f, 0x4C(pLayout)
+        }
         return;
     }
-
-    pLayout->_4C = new FPSCounter();
-    pLayout->_4C->initWithoutIter();
+    register LayoutActor* pFPS = new FPSCounter();
+    __asm
+    {
+        stw pFPS, 0x4C(pLayout)
+    }
+    pFPS->initWithoutIter();
 }
 
 //We'll be storing this at 0x4C
@@ -230,9 +241,3 @@ void DoCalcAnimFPSCounter()
 kmCall(0x804518A8, DoMovementFPSCounter);
 kmBranch(0x804589B8, DoDrawFPSCounter);
 kmCall(0x80451948, DoCalcAnimFPSCounter);
-
-#if defined TWN || defined KOR
-kmBranch(0x804B6B44, MR::CalcFPS);
-#else
-kmBranch(0x804B6AD4, MR::CalcFPS);
-#endif
