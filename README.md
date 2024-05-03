@@ -44,12 +44,8 @@ FPS Calculation modes:
 (You will need to compile Project Template yourself to include the FPS counter)
 
 ## Build Instructions
-This mod requires **[Syati](https://github.com/SMGCommunity/Syati)**.
+This mod is a **[Syati Module](https://github.com/SMGCommunity/SyatiModuleBuildTool)**.<br/>Needs the [Syati_GlobalLayouts](https://github.com/SMGCommunity/Syati_GlobalLayouts) module in order for it to load in-game.
 
-Clone Syati, then clone this repository. Once cloned, merge the contents of this repository into Syati's folder.</br>
-If prompted to replace files, click "Yes".</br>
-You also need the **CodeWarror Compiler (4.3.0.182)** and **[Kamek](https://github.com/Treeki/Kamek).**
-
-Syati will come with some pre-made source files, you may delete those if you want (but do not delete init.cpp).
+The required game files can be found in the "disc" folder.
 
 On the [Releases](https://github.com/SuperHackio/SMG2-FPSCounterLayout/releases) page, you can find a pre-compile file. This is for hacks that don't use any other Syati code (like Project Template).
