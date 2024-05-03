@@ -11,6 +11,14 @@
           "Function": "MR::CalcFPS",
           "Include": "FPS_Include.h"
         }
+      ],
+      "GlobalLayout": [
+        {
+          "Name": "FPSCounter",
+          "DiscPath": "/LayoutData/FPSCounter.arc",
+          "Function": "createExtLayout<FPSCounter>",
+          "Include": "FPS.h"
+        }
       ]
     }
   ]

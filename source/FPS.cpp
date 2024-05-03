@@ -1,6 +1,7 @@
 #pragma once
 
 #include "FPS.h"
+#include "FPS_Static.h"
 
 const char* LayoutName = "FPSCounter";
 const char* Pane_PicMode = "PicMode";
@@ -16,7 +17,7 @@ namespace MR
     static u8 HiddenStatus = 2;
 }
 
-FPSCounter::FPSCounter() : LayoutActor(LayoutName, 0)
+FPSCounter::FPSCounter(const char* pName) : LayoutActor(pName, 0)
 {
 
 }
@@ -149,95 +150,4 @@ namespace MR
 
         MR::CurrentFPS = val > MinusOne ? FloatsPerSecond : val;
     }
-
-
-    FPSCounter* getFPSCounterLayout()
-    {
-        register CounterLayoutController* holder = getCounterLayoutController();
-        if (holder == NULL)
-            return NULL;
-        register FPSCounter* MyLayout;
-        __asm {
-            lwz MyLayout, 0x4C(holder)
-        }
-        return MyLayout;
-    }
-    CounterLayoutController* getCounterLayoutController()
-    {
-        register GameSceneLayoutHolder* holder = MR::getGameSceneLayoutHolder();
-        if (holder == NULL)
-            return NULL;
-        register CounterLayoutController* controller = NULL;
-        __asm
-        {
-            lwz controller, 0x34(holder)
-        }
-        return controller;
-    }
-    bool IsExistFPSCounterLayout()
-    {
-        GameSceneLayoutHolder* holder = MR::getGameSceneLayoutHolder();
-        if (holder == NULL)
-            return false;
-        return getFPSCounterLayout() != 0;
-    }
 }
-
-
-
-//This will be a part of CounterLayoutController
-//So we'll need to edit that with Kamek... Great
-
-
-//Edit CounterLayoutController
-kmWrite32(0x80471780, 0x38600050); //li r3, 0x4C -> li r3, 0x50
-
-void CreateFPSCounter(register CounterLayoutController* pLayout)
-{
-    MR::connectToSceneLayout(pLayout);
-
-    if (!MR::isFileExist("/LayoutData/FPSCounter.arc", true))
-    {
-        register LayoutActor* f = NULL;
-        __asm
-        {
-            stw f, 0x4C(pLayout)
-        }
-        return;
-    }
-    register LayoutActor* pFPS = new FPSCounter();
-    __asm
-    {
-        stw pFPS, 0x4C(pLayout)
-    }
-    pFPS->initWithoutIter();
-}
-
-//We'll be storing this at 0x4C
-kmCall(0x804657A0, CreateFPSCounter); //Add branch to create code
-
-
-void DoMovementFPSCounter(NerveExecutor* nrv)
-{
-    nrv->updateNerve();
-    if (MR::IsExistFPSCounterLayout())
-        MR::getFPSCounterLayout()->movement();
-}
-
-void DoDrawFPSCounter()
-{
-    if (MR::IsExistFPSCounterLayout())
-        MR::getFPSCounterLayout()->draw();
-}
-
-void DoCalcAnimFPSCounter()
-{
-    if (MR::IsExistFPSCounterLayout())
-        MR::getFPSCounterLayout()->calcAnim();
-
-    MR::isStageWorldMap();
-}
-
-kmCall(0x804518A8, DoMovementFPSCounter);
-kmBranch(0x804589B8, DoDrawFPSCounter);
-kmCall(0x80451948, DoCalcAnimFPSCounter);
