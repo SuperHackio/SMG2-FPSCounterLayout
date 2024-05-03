@@ -40,12 +40,8 @@ FPS Calculation modes:
 
 ## Supported Extensions
 - [Galaxy Level Engine](https://github.com/SuperHackio/GalaxyLevelEngine) :heavy_check_mark:
-- [SMG2-Project-Template](https://github.com/SunakazeKun/SMG2-Project-Template) :heavy_check_mark:
-(You will need to compile Project Template yourself to include the FPS counter)
 
 ## Build Instructions
 This mod is a **[Syati Module](https://github.com/SMGCommunity/SyatiModuleBuildTool)**.<br/>Needs the [Syati_GlobalLayouts](https://github.com/SMGCommunity/Syati_GlobalLayouts) module in order for it to load in-game.
 
 The required game files can be found in the "disc" folder.
-
-On the [Releases](https://github.com/SuperHackio/SMG2-FPSCounterLayout/releases) page, you can find a pre-compile file. This is for hacks that don't use any other Syati code (like Project Template).
